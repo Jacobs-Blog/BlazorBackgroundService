@@ -1,15 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.6.30114.105
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31521.260
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorBackgroundService.Infrastructure", "src\BlazorBackgroundService.Infrastructure\BlazorBackgroundService.Infrastructure.csproj", "{33B2CB35-F1F0-46EB-B285-174208B80FDE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorBackgroundService.Infrastructure", "src\BlazorBackgroundService.Infrastructure\BlazorBackgroundService.Infrastructure.csproj", "{33B2CB35-F1F0-46EB-B285-174208B80FDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorBackgroundService.Domain", "src\BlazorBackgroundService.Domain\BlazorBackgroundService.Domain.csproj", "{F499B860-5B2E-4D85-AFAE-ED7698C398FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorBackgroundService.Domain", "src\BlazorBackgroundService.Domain\BlazorBackgroundService.Domain.csproj", "{F499B860-5B2E-4D85-AFAE-ED7698C398FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorBackgroundService.Application", "src\BlazorBackgroundService.Application\BlazorBackgroundService.Application.csproj", "{0E9B5898-FE75-40D8-BBF7-006ECFC95F5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorBackgroundService.Application", "src\BlazorBackgroundService.Application\BlazorBackgroundService.Application.csproj", "{0E9B5898-FE75-40D8-BBF7-006ECFC95F5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorBackgroundService.UnitTests", "tests\BlazorBackgroundService.UnitTests\BlazorBackgroundService.UnitTests.csproj", "{813D2946-8EFC-4BA9-8E87-E91F9F77B717}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorBackgroundService.UnitTests", "tests\BlazorBackgroundService.UnitTests\BlazorBackgroundService.UnitTests.csproj", "{813D2946-8EFC-4BA9-8E87-E91F9F77B717}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorBackgroundService.BlazorUI", "src\BlazorBackgroundService.BlazorUI\BlazorBackgroundService.BlazorUI.csproj", "{E5828D3A-610A-465F-BE0D-ADC44F54DB40}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,9 +21,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{33B2CB35-F1F0-46EB-B285-174208B80FDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -72,5 +71,23 @@ Global
 		{813D2946-8EFC-4BA9-8E87-E91F9F77B717}.Release|x64.Build.0 = Release|Any CPU
 		{813D2946-8EFC-4BA9-8E87-E91F9F77B717}.Release|x86.ActiveCfg = Release|Any CPU
 		{813D2946-8EFC-4BA9-8E87-E91F9F77B717}.Release|x86.Build.0 = Release|Any CPU
+		{E5828D3A-610A-465F-BE0D-ADC44F54DB40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5828D3A-610A-465F-BE0D-ADC44F54DB40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5828D3A-610A-465F-BE0D-ADC44F54DB40}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E5828D3A-610A-465F-BE0D-ADC44F54DB40}.Debug|x64.Build.0 = Debug|Any CPU
+		{E5828D3A-610A-465F-BE0D-ADC44F54DB40}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E5828D3A-610A-465F-BE0D-ADC44F54DB40}.Debug|x86.Build.0 = Debug|Any CPU
+		{E5828D3A-610A-465F-BE0D-ADC44F54DB40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5828D3A-610A-465F-BE0D-ADC44F54DB40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5828D3A-610A-465F-BE0D-ADC44F54DB40}.Release|x64.ActiveCfg = Release|Any CPU
+		{E5828D3A-610A-465F-BE0D-ADC44F54DB40}.Release|x64.Build.0 = Release|Any CPU
+		{E5828D3A-610A-465F-BE0D-ADC44F54DB40}.Release|x86.ActiveCfg = Release|Any CPU
+		{E5828D3A-610A-465F-BE0D-ADC44F54DB40}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9433C0E0-E528-477A-8181-CFC735F39BD5}
 	EndGlobalSection
 EndGlobal
