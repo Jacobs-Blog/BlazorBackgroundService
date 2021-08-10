@@ -1,11 +1,9 @@
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace BlazorBackgroundService.BlazorUI
 {
@@ -13,7 +11,30 @@ namespace BlazorBackgroundService.BlazorUI
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            var isService = !(Debugger.IsAttached || args.Contains("--console"));
+
+            if (isService)
+            {
+                //TODO: Environment.ProcessPath?
+                var pathToExe = Process.GetCurrentProcess().MainModule!.FileName;
+                var pathToContentRoot = Path.GetDirectoryName(pathToExe);
+                Directory.SetCurrentDirectory(pathToContentRoot!);
+            }
+
+            var builder = CreateHostBuilder(args.Where(arg => arg != "--console").ToArray());
+
+            if (isService)
+            {
+                if (OperatingSystem.IsWindows())
+                    builder.UseWindowsService();
+                else if (OperatingSystem.IsLinux())
+                    builder.UseSystemd();
+                else
+                    throw new InvalidOperationException(
+                        $"Can not run this application as a service on this Operating System");
+            }
+
+            builder.Build().Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

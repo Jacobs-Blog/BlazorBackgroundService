@@ -1,0 +1,22 @@
+@page "/Scraper"
+@inject CustomBackgroundService _customBackgroundService
+
+<h3>Scraper</h3>
+
+<button name="startButton" class="btn btn-primary" @onclick="Start">Start</button>
+<button class="btn btn-primary" @onclick="Stop">Stop</button>
+
+@code {
+
+    private async Task Start()
+    {
+        if(!_customBackgroundService.IsRunning)
+            await _customBackgroundService.StartAsync(new System.Threading.CancellationToken());
+    }
+    
+    private async Task Stop()
+    {
+        if(_customBackgroundService.IsRunning)
+            await _customBackgroundService.StopAsync(new System.Threading.CancellationToken());
+    }
+}
