@@ -12,10 +12,8 @@ namespace BlazorBackgroundService.BlazorUI
 
         private readonly ILogger<CustomBackgroundService> _logger;
 
-        public CustomBackgroundService(ILogger<CustomBackgroundService> logger)
-        {
+        public CustomBackgroundService(ILogger<CustomBackgroundService> logger) =>
             _logger = logger;
-        }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
@@ -40,6 +38,5 @@ namespace BlazorBackgroundService.BlazorUI
                 IsRunning = false;
             }
         }
-
     }
 }

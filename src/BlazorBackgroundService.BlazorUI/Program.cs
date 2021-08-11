@@ -13,13 +13,11 @@ namespace BlazorBackgroundService.BlazorUI
         public static void Main(string[] args)
         {
             var isService = !(Debugger.IsAttached || args.Contains("--console"));
-
             if (isService)
             {
-                //TODO: Environment.ProcessPath?
                 var pathToExe = Process.GetCurrentProcess().MainModule!.FileName;
                 var pathToContentRoot = Path.GetDirectoryName(pathToExe);
-                Directory.SetCurrentDirectory(pathToContentRoot!);
+                Directory.SetCurrentDirectory(pathToContentRoot!); 
             }
 
             var builder = CreateHostBuilder(args.Where(arg => arg != "--console").ToArray());
