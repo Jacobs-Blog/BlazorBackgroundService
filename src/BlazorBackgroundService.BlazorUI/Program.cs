@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
+using Serilog;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -22,7 +23,7 @@ namespace BlazorBackgroundService.BlazorUI
             }
 
             var builder = CreateHostBuilder(args.Where(arg => arg != "--console").ToArray());
-
+            
             if (isService)
             {
                 if (OperatingSystem.IsWindows())
@@ -37,11 +38,11 @@ namespace BlazorBackgroundService.BlazorUI
             builder.Build().Run();
         }
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
+        private static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                });
+                .UseSerilog((context, services, configuration) => configuration
+                    .WriteTo.Console()
+                    .ReadFrom.Configuration(context.Configuration))
+                .ConfigureWebHostDefaults(webBuilder => webBuilder.UseStartup<Startup>());
     }
 }

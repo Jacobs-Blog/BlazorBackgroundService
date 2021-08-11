@@ -7,6 +7,9 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Hosting.Systemd" Version="6.0.0-preview.6.21352.12" />
     <PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" Version="6.0.0-preview.6.21352.12" />
+    <PackageReference Include="Serilog.AspNetCore" Version="4.1.0" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="4.0.0" />
+    <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
   </ItemGroup>
 
 </Project>
